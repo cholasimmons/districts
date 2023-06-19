@@ -1,0 +1,23 @@
+{
+  "name": "@justchola/zm-districts",
+  "version": "1.0.0",
+  "description": "A library of Zambian provinces, districts and constituencies",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc"
+  },
+  "keywords": [
+    "zambia",
+    "provinces",
+    "districts",
+    "constituencies",
+    "simmons"
+  ],
+  "author": "Just.Chola",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
