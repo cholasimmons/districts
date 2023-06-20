@@ -16,6 +16,7 @@
     "simmons"
   ],
   "author": "Just.Chola",
+  "git": "https://github.com/cholasimmons/districts",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.0.4"
