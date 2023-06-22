@@ -1,4 +1,5 @@
-export { IProvince, IDistrict, IConstituency, IBaseCountry, ICurrency, ICountry, ITribe };
+import { Zambia } from "../Zambia/zm";
+export { IProvince, IDistrict, IConstituency, IBaseCountry, ICurrency, ICountry, ITribe, Provinces, IReturnedConstituency };
 
 interface IProvince {
     name: string; capital: string; area?: number; country: string; nickname?: string; count?: number, phoneAreaCode?: number, districts: IDistrict[]
@@ -28,4 +29,12 @@ interface ICountry {
 interface ITribe {
     name: string;
     origin?: string[]
+}
+enum Provinces {
+    getProvinceNames
+}
+interface IReturnedConstituency {
+    constituency: string;
+    district: string;
+    province: string;
 }

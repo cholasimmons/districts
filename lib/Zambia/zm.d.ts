@@ -1,9 +1,11 @@
-import type { IBaseCountry, IProvince, ICurrency, ICountry, ITribes, IDistrict } from "../interfaces/interfaces";
+import type { IBaseCountry, IProvince, ICurrency, ICountry, ITribe, IDistrict, IReturnedConstituency } from "../_interfaces/interfaces";
 export declare class Zambia implements IBaseCountry {
     readonly currency: ICurrency;
     readonly country: ICountry;
-    readonly tribes: ITribes[];
     static areaUnit: string;
+    private static provinces;
+    private static tribes;
+    static get isLandlocked(): boolean;
     constructor();
     /**
      * Get all province objects of the country as a full nested array
@@ -13,11 +15,11 @@ export declare class Zambia implements IBaseCountry {
     /**
      * Get single province object by name provided
      * @requires string
-     * @returns IProvince[]
+     * @returns IProvince
      **/
     static getProvince(name: string): IProvince | null;
     /**
-     * Get a list of ONLY province names, in no particular order
+     * Get a list (array) of ONLY province names, in no particular order
      * @returns string[]
      */
     static getProvinceNames(): string[];
@@ -25,13 +27,43 @@ export declare class Zambia implements IBaseCountry {
      * Fetch all districts from every province
      * @returns IDistrict[]
      */
-    static getAllDistricts(): IDistrict[];
+    static getDistricts(): IDistrict[];
     /**
-     * Count all districts in every province
+     * Fetch districts by province
+     * @returns IDistrict[]
+     */
+    static getDistrictsByProvince(provinceName: string): IDistrict[];
+    /**
+     * Count all districts in every province (could just use length from getAllDistricts() function)
      * @returns number
      */
     static countAllDistricts(): number;
-    getTribes(): ITribes[];
-    private static provinces;
-    static countDistrictsOfProvince(provinceName: string): number;
+    /**
+     * Get single district object by name provided
+     * @requires string
+     * @returns IDistrict
+     **/
+    static getDistrict(name: string): IDistrict[] | null;
+    /**
+     * Returns all tribe objects in an array.
+     * @returns ITribes[]
+     */
+    static getTribes(): ITribe[];
+    /**
+     * Returns district objects that belong to the mentioned province
+     * @param provinceName (string)
+     * @returns IDistrict[]
+     */
+    static getDistrictsOfProvince(provinceName: string): IDistrict[] | null;
+    /**
+     * Returns all available constituencies
+     * @returns IConstituencies[]
+     */
+    static getConstituencies(): IReturnedConstituency[] | null;
+    /**
+     * Returns all constituencies in a province
+     * @param provinceName (string)
+     * @returns IReturnedConstituency[]
+     */
+    static getConstituenciesByProvince(provinceName: string): IReturnedConstituency[] | null;
 }

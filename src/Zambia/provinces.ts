@@ -1,4 +1,4 @@
-export = [
+export default [
     // 01 Central
 
     { name: 'Central', capital: 'Kabwe', area: 110450, country: 'Zambia', phoneAreaCode: 215, districts: [

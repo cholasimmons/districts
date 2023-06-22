@@ -1,4 +1,4 @@
-export = [
+export default [
     // 01 Central
 
     { name: 'Bemba', origin: [ 'Northern', 'Central' ]},

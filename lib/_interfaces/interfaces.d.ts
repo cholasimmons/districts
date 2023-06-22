@@ -1,4 +1,4 @@
-export { IProvince, IDistrict, IConstituency, IBaseCountry, ICurrency, ICountry, ITribes };
+export { IProvince, IDistrict, IConstituency, IBaseCountry, ICurrency, ICountry, ITribe, Provinces, IReturnedConstituency };
 interface IProvince {
     name: string;
     capital: string;
@@ -6,36 +6,43 @@ interface IProvince {
     country: string;
     nickname?: string;
     count?: number;
-    phoneAreaCode?: string;
+    phoneAreaCode?: number;
     districts: IDistrict[];
 }
 interface IDistrict {
     name: string;
-    capital: string;
+    headquarters: string;
     area?: number;
     province: string;
     nickname?: string;
     constituencies: IConstituency[];
 }
 interface IConstituency {
-    name?: string;
+    name: string;
 }
 interface IBaseCountry {
     currency: ICurrency;
     country: ICountry;
-    tribes: ITribes[];
 }
 interface ICurrency {
     name: string;
     code: string;
     symbol: string;
-    iso?: number;
 }
 interface ICountry {
     name: string;
     code: string;
     phoneCode: number;
 }
-interface ITribes {
+interface ITribe {
     name: string;
+    origin?: string[];
+}
+declare enum Provinces {
+    getProvinceNames = 0
+}
+interface IReturnedConstituency {
+    constituency: string;
+    district: string;
+    province: string;
 }

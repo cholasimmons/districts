@@ -1,28 +1,21 @@
-declare const _default: ({
+declare const _default: {
     name: string;
     capital: string;
     area: number;
     country: string;
-    districts: {
+    phoneAreaCode: number;
+    districts: ({
         name: string;
-        capital: string;
-        area: number;
+        headquarters: string;
+        area: undefined;
         province: string;
-        nickname: string;
+        nickname: undefined;
         constituencies: {
             name: string;
         }[];
-    }[];
-    phoneAreaCode?: undefined;
-} | {
-    name: string;
-    capital: string;
-    area: number;
-    country: string;
-    phoneAreaCode: string;
-    districts: ({
+    } | {
         name: string;
-        capital: string;
+        headquarters: string;
         area: number;
         province: string;
         nickname: undefined;
@@ -31,7 +24,7 @@ declare const _default: ({
         }[];
     } | {
         name: string;
-        capital: string;
+        headquarters: string;
         area: number;
         province: string;
         nickname: string;
@@ -39,5 +32,5 @@ declare const _default: ({
             name: string;
         }[];
     })[];
-})[];
-export = _default;
+}[];
+export default _default;

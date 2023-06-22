@@ -4,4 +4,4 @@
  *
   */
 import { Zambia } from './Zambia/zm';
-export { Zambia as default };
+export { Zambia };
