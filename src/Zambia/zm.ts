@@ -34,8 +34,7 @@ export class Zambia implements IBaseCountry {
      * @returns IProvince
      **/
     public static getProvince(name: string): IProvince|null{
-        const cleanName = name.toLowerCase();
-        return this.provinces.find((province: IProvince) => province.name === cleanName) ?? null;
+        return this.provinces.find((province: IProvince) => province.name.toLowerCase() === name.toLowerCase()) ?? null;
     }
 
     /**
@@ -66,11 +65,10 @@ export class Zambia implements IBaseCountry {
      * @returns IDistrict[]
      */
     public static getDistrictsByProvince(provinceName: string): IDistrict[]{
-        const cleanName = provinceName.toLowerCase().toTitleCase();
         const districts: any[] = [];
 
         provinces.forEach((province) => {
-            if(province.name === cleanName){
+            if(province.name.toLowerCase() === provinceName.toLowerCase()){
                 
             }
             province.districts.forEach((district) => {

@@ -9,5 +9,11 @@ module.exports = {
   },
   optimization: {
     usedExports: true // Enable tree shaking
-  }
+  },
+  resolve: {
+    extensions: ['.js', '.ts'],
+    alias: {
+      '@justchola/districts': path.resolve(__dirname, 'src'),
+    },
+  },
 };
